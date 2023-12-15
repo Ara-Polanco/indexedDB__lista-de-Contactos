@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndexedDB  ¡Lista de Contactos!</title>
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -18,6 +19,29 @@
         </nav>
     </header>
 
+    <main class="contacts">
+        <h2 class="contacts__title">Mis Contactos</h2>
+
+        <div class="contacts__container">
+
+            <table class="contacts__table">
+
+                <thead class="contacts__thead">
+                    <tr class="contacts__tr">
+                        <th class="contacts__td">Nombre</th>
+                        <th class="contacts__td">Apellido</th>
+                        <th class="contacts__td">Teléfono</th>
+                        <th class="contacts__td">Empresa</th>
+                        <th class="contacts__td">Correo</th>
+                    </tr>
+                </thead>
+
+                <tbody class="contacts__tbody contact-list">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
     
 </body>
 </html>
