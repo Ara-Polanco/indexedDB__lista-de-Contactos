@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndexedDB  ¡Lista de Contactos!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
     <header class="header">
-        <h1 class="header__title">IndexedDB  <br>¡Lista de Contactos!</h1>
+        <h1 class="header__title text-center">IndexedDB ¡Lista de Contactos!</h1>
         <p class="header__text">Administra tu Lista de Contactos</p>
 
         <nav class="header__nav">
-            <a href="nuevo-contacto.html" class="header__link">Agregar Contacto</a>
-            <a href="index.html" class="header__link">Ir a Contactos</a>
+            <a href="index.html" class="header__link btn btn-activo">Mis Contactos</a>
+            <a href="nuevo-contacto.html" class="header__link btn ">Agregar Contacto</a>
         </nav>
     </header>
 
     <main class="contacts">
-        <h2 class="contacts__title">Mis Contactos</h2>
 
-        <div class="contacts__container">
+        <div class="contacts__container container ">
+        <h2 class="contacts__title text-center mb-5">Mis Contactos</h2>
+
 
             <table class="contacts__table">
 

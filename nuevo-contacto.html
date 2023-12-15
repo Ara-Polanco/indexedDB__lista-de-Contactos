@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndexedDB ¡Lista de Contactos!</title>
+    <title>IndexedDB  ¡Lista de Contactos!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
     <header class="header">
-        <h1 class="header__title">IndexedDB  <br>¡Lista de Contactos!</h1>
+        <h1 class="header__title">IndexedDB ¡Lista de Contactos!</h1>
         <p class="header__text">Administra tu Lista de Contactos</p>
 
         <nav class="header__nav">
-            <a href="nuevo-contacto.html" class="header__link">Agregar Contacto</a>
-            <a href="index.html" class="header__link">Ir a Contactos</a>
+            <a href="index.html" class="header__link btn ">Mis Contactos</a>
+            <a href="nuevo-contacto.html" class="header__link btn btn-activo ">Agregar Contacto</a>
         </nav>
     </header>
 
-    <main class="new-contact">
-        <h1 class="new-contact__title">Añadir Contacto</h1>
-
-        <div class="new-contact__container">
+    <main class="new-contact ">
+        <div class="new-contact__container container">
+            
+            <h1 class="new-contact__title text-center mb-5">Agregar Contacto</h1>
 
             <form action="#" class="form">
 
@@ -46,7 +50,7 @@
                     <input name="email" id="email" type="email" class="form__input">
                 </div>
                 <div class="form__container">
-                    <input name="submit" id="submit" type="submit" class="form__input" value="Agregar Contacto">
+                    <input name="submit" id="submit" type="submit" class="form__submit " value="Agregar Contacto">
                 </div>
             </form>
         </div>
