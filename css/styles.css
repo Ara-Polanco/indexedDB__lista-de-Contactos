@@ -18,6 +18,7 @@ html {
 
 *, *:before, *:after {
     box-sizing: inherit;
+    margin: 0;
 }
 
 body {
@@ -67,6 +68,23 @@ input {
     width: 95%;
     max-width: 120rem;
     margin: 0 auto;
+}
+
+.error {
+    font-size: 1.6rem;
+    color: red;
+    border: 2px solid red;
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    margin: 0;
+}
+.correct {
+    font-size: 1.6rem;
+    color: var(--colorSecundary);   /* Cambiar por verde constum */
+    border: 2px solid var(--colorSecundary);
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    margin: 0;
 }
 
 .btn {
@@ -128,6 +146,8 @@ input {
 .new-contact__title,
 .contacts__title {
     color: var(--colorPrimary);
+    letter-spacing: 2px;
+    word-spacing: 5px;
 }
 
 .contacts__container {
@@ -135,24 +155,75 @@ input {
 }
 
 .contacts__table{
-    background-color: var(--colorWhite);
+    background-color: var(--colorLight);
     box-shadow: 0 0 7px 1px rgba(0,0,0,.1);
     border-radius: 1rem;
     width: 100%;
+    margin: 0 auto;
 }
 
 .contacts__thead {
-    width: 100%;
-    text-align: left;
+
 }
+.contacts__a,
 .contacts__tr {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    color: var(--colorSecundary);
+    background-color: var(--colorWhite);
+    padding: .5rem 0;   /* Borrar o dejar? */
+    font-weight: 600;
+    overflow: hidden;
+}
+.contacts__th {
+    padding: 0 .5rem;
+    letter-spacing: 3px;
     color: var(--colorSecundaryLight);
     text-shadow: 1px 1px 1px var(--colorSecundary);
-    letter-spacing: 2px;  
 }
+.contacts__tbody.contacts__tr {
+
+}
+
+.contacts__td {
+    text-align: center;
+    font-size: 1.6rem;
+  
+}
+.contacts__a {
+    font-size: 1.6rem;
+    color: var(--colorSecundary);
+  
+    transition-duration: .4s;
+    transition-property: color;
+}
+.contacts__a:hover {
+    color: var(--colorPrimary);
+}
+
+.contacts__a:first-of-type {
+    margin-right: 2rem;
+}
+
+
+/* 
+.btn {
+    color: var(--colorWhite);
+    background-color: transparent;
+    padding: .5rem 2rem;
+    border-radius: 1rem;
+    width: 30rem;
+    text-align: center;
+    transition-duration: .4s;
+    transition-property: border background-color;
+}
+.btn-activo {
+    background-color: var(--colorSecundary);
+}
+.btn:hover {
+    background-color: var(--colorSecundary);
+    border: 2px solid var(--colorSecundaryLight);
+}
+
+*/
 
 .form {
     width: 60rem;
