@@ -1,18 +1,18 @@
 (function() {
-    let DB 
+    /* let DB  */
     let idContact
 
-    const nameElement = document.querySelector('#name')
-    const lastNameElement = document.querySelector('#last-name')
-    const phoneElement = document.querySelector('#phone')
-    const companyElement = document.querySelector('#company')
-    const emailElement = document.querySelector('#email')
-    const formElement = document.querySelector('#form')
+    const name = document.querySelector('#name')
+    const lastName = document.querySelector('#last-name')
+    const phone = document.querySelector('#phone')
+    const company = document.querySelector('#company')
+    const email = document.querySelector('#email')
+    const form = document.querySelector('#form')
 
     document.addEventListener('DOMContentLoaded', () => {
         connectDB()
         /* update the registry */
-        formElement.addEventListener('submit', updateContact)
+        form.addEventListener('submit', updateContact)
 
         /* Check url id */
         const parametrosURL = new URLSearchParams(window.location.search)
@@ -41,6 +41,7 @@
             }
         }
     }
+    
 
     function connectDB() {
         const openConnection = window.indexedDB.open('contactos', 1)
@@ -56,27 +57,27 @@
     function fillForm(contactInfo) {
         const {nombre, apellido, telefono, empresa, correo } = contactInfo
 
-        nameElement.value = nombre
-        lastNameElement.value = apellido
-        phoneElement.value = telefono
-        companyElement.value = empresa
-        emailElement.value = correo
+        name.value = nombre
+        lastName.value = apellido
+        phone.value = telefono
+        company.value = empresa
+        email.value = correo
     }
 
     function updateContact(e) {
         e.preventDefault()
-        if(nameElement.value === '' || lastNameElement.value === '' || phoneElement.value === '' || companyElement.value === '' || emailElement.value === '') {
+        if(name.value === '' || lastName.value === '' || phone.value === '' || company.value === '' || email.value === '') {
             printAlert('Todos los campos son obligatorios', 'error')
             return
         }
 
         /* Update contact */
         const updatedContact = {
-            nombre: nameElement.value,
-            apellido: lastNameElement.value,
-            telefono: phoneElement.value,
-            empresa: companyElement.value,
-            correo: emailElement.value,
+            nombre: name.value,
+            apellido: lastName.value,
+            telefono: phone.value,
+            empresa: company.value,
+            correo: email.value,
             id: Number(idContact)
         }
         const transaction = DB.transaction(['contactos'], 'readwrite')
@@ -92,7 +93,7 @@
             }, 3000);
         }
         transaction.onerror = function() {
-            printAlert('Hubo un error', 'error')
+            printAlert('Hubo un error enUpdateContact', 'error')
         }
     }
 

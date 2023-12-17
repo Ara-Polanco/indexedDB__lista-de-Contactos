@@ -5,7 +5,7 @@ function connectDB() {
     const openConnection = window.indexedDB.open('contactos', 1)
 
     openConnection.onerror = function() {
-        console.log('Hubo un error')
+        console.log('Hubo un error al Conectar de DB enfunciones')
     }
 
     openConnection.onsuccess = function() {
@@ -31,7 +31,7 @@ function printAlert(message, typeMessage) {
 
         setTimeout(() => {
             messageContainer.remove()
-        }, 3000);
+        }, 2500);
     }   
 }
 

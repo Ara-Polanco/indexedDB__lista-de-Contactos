@@ -8,7 +8,7 @@
 
     --mainSource: 'Playfair Display', serif;
 
-    --separation: 3rem;
+    --separation: 2rem;
 }
 
 html {
@@ -24,7 +24,7 @@ html {
 body {
     font-family: var(--mainSource);
     font-size: 1.6rem;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 h1, h2 {
@@ -44,12 +44,11 @@ h2 {
         background-color: var(--colorLight);
     }
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.3rem;
         letter-spacing: 2px;
     }
-    /* Checar si requiere de h2 */
     h2 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -80,7 +79,7 @@ input {
 }
 .correct {
     font-size: 1.6rem;
-    color: var(--colorSecundary);   /* Cambiar por verde constum */
+    color: var(--colorSecundary);  
     border: 2px solid var(--colorSecundary);
     border-radius: 1rem;
     padding: .5rem 2rem;
@@ -92,7 +91,7 @@ input {
     background-color: transparent;
     padding: .5rem 2rem;
     border-radius: 1rem;
-    width: 30rem;
+    width: 20rem; 
     text-align: center;
     transition-duration: .4s;
     transition-property: border background-color;
@@ -109,18 +108,19 @@ input {
     text-align: center;
 }
 
-.mb-5 {
-    margin-bottom: 5rem;
+.mb-2 {
+    margin-bottom: 2rem;
 }
 
 .header {
     background-color: var(--colorPrimary);
     color: var(--colorWhite);
-    padding: var(--separation) 2rem;
+    padding: var(--separation) var(--separation) 3rem var(--separation);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 
 
@@ -139,8 +139,7 @@ input {
 
 .new-contact,
 .contacts {
-    padding: calc(var(--separation) * 2) var(--separation) ;
-
+    padding: calc(var(--separation) * 1) var(--separation) ;
 }
 
 .new-contact__title,
@@ -150,28 +149,26 @@ input {
     word-spacing: 5px;
 }
 
-.contacts__container {
-
-}
-
 .contacts__table{
     background-color: var(--colorLight);
     box-shadow: 0 0 7px 1px rgba(0,0,0,.1);
     border-radius: 1rem;
-    width: 100%;
     margin: 0 auto;
+    width: 100%; 
+ 
 }
 
-.contacts__thead {
-
-}
 .contacts__a,
 .contacts__tr {
     color: var(--colorSecundary);
     background-color: var(--colorWhite);
     padding: .5rem 0;   /* Borrar o dejar? */
     font-weight: 600;
-    overflow: hidden;
+ 
+}
+.contacts__tr:hover {
+    box-shadow: 0 0 7px 1px rgba(0,0,0,.1);
+
 }
 .contacts__th {
     padding: 0 .5rem;
@@ -179,19 +176,15 @@ input {
     color: var(--colorSecundaryLight);
     text-shadow: 1px 1px 1px var(--colorSecundary);
 }
-.contacts__tbody.contacts__tr {
 
-}
-
+.contacts__a,
 .contacts__td {
     text-align: center;
-    font-size: 1.6rem;
-  
 }
+
+
 .contacts__a {
-    font-size: 1.6rem;
     color: var(--colorSecundary);
-  
     transition-duration: .4s;
     transition-property: color;
 }
@@ -200,30 +193,33 @@ input {
 }
 
 .contacts__a:first-of-type {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
-
-/* 
-.btn {
-    color: var(--colorWhite);
-    background-color: transparent;
-    padding: .5rem 2rem;
-    border-radius: 1rem;
-    width: 30rem;
-    text-align: center;
-    transition-duration: .4s;
-    transition-property: border background-color;
+.contacts__th,
+.contacts__a,
+.contacts__td {
+    font-size: 1rem;
 }
-.btn-activo {
-    background-color: var(--colorSecundary);
-}
-.btn:hover {
-    background-color: var(--colorSecundary);
-    border: 2px solid var(--colorSecundaryLight);
+@media (min-width: 430px) {  
+    .contacts__th,
+    .contacts__a,
+    .contacts__td {
+        font-size: 1.3rem;
+    }  
 }
 
-*/
+@media (min-width: 576px) {  
+    .contacts__th,
+    .contacts__a,
+    .contacts__td {
+        font-size: 1.6rem;
+    }  
+    .btn {
+        width: 30rem;
+    }
+}
+
 
 .form {
     width: 60rem;

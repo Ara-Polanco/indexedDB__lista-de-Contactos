@@ -1,5 +1,5 @@
 (function() {
-    let DB
+   /*  let DB */
     const formElement = document.querySelector('#form')
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -42,16 +42,17 @@
 
         objectStore.add(contact)
 
-        transaction.onerror = function() {
-            printAlert('Hubo un error', 'error')
-        }
-
         transaction.oncomplete = function() {
             printAlert('El contacto se agregó correctamente')
-
+            
             setTimeout(() => {
                 window.location.href = 'index.html'
-            }, 3000);
+            }, 2500);
         }
+        
+        transaction.onerror = function() {
+            printAlert('Hubo un error en CreateNewContact', 'error')
+        }
+
     }
 })()

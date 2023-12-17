@@ -1,6 +1,7 @@
 (function() {
 
     let DB
+    const contactList = document.querySelector('.contacts__tbody')
 
     document.addEventListener('DOMContentLoaded', () => {
         createDB()
@@ -8,6 +9,8 @@
         if(window.indexedDB.open('contactos', 1) ) {
             getContacts()
         }
+
+        contactList.addEventListener('click', deleteContact)
     })
 
 
@@ -46,7 +49,7 @@
         const openConnection = window.indexedDB.open('contactos', 1)
 
         openConnection.onerror = function() {
-            console.log('Hubo un error')
+            console.log('Hubo un error en GetContacts')
         }
 
         openConnection.onsuccess = function() {
@@ -60,7 +63,7 @@
                 if(cursor) {
                     const { nombre, apellido, telefono, empresa, correo, id } = cursor.value
 
-                    const contactList = document.querySelector('.contacts__tbody')
+                   
 
                     contactList.innerHTML += `
                     <tr class="contacts__tr">
@@ -75,7 +78,7 @@
                         </td>
                         <td class="contacts__td">
                             <a href="editar-contacto.html?id=${id}" class="contacts__a">Editar</a>
-                            <a href="#" data-cliente="${id}" class="contacts__a">Eliminar</a>
+                            <a href="#" data-contacto="${id}" class="contacts__a delete">Eliminar</a>
                         </td>
                     </tr>  
                     `
@@ -85,6 +88,29 @@
                 } else {
                     console.log('No hay más registros')
                 }
+            }
+        }
+    }
+
+    function deleteContact(e) {
+        if(e.target.classList.contains('delete') ) {
+            const idDelete = Number(e.target.dataset.contacto)
+
+            const confirmation = confirm('¿Eliminar el contacto?')
+            if(confirmation) {
+                const transaction = DB.transaction('contactos', 'readwrite')
+                const objectStore = transaction.objectStore('contactos')
+
+                objectStore.delete(idDelete)
+
+                transaction.oncomplete = function() {
+                    e.target.parentElement.parentElement.remove()
+                }
+
+                transaction.onerror = function() {
+                    console.log('Hubo un error en Delete')
+                }
+                /* Todo esta listo */
             }
         }
     }
