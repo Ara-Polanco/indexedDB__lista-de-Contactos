@@ -1,11 +1,12 @@
 let DB
 const formElement = document.querySelector('#form')
 
+/* Functions */
 function connectDB() {
     const openConnection = window.indexedDB.open('contactos', 1)
 
     openConnection.onerror = function() {
-        console.log('Hubo un error al Conectar de DB enfunciones')
+        console.log('Hubo un error')
     }
 
     openConnection.onsuccess = function() {
@@ -34,4 +35,3 @@ function printAlert(message, typeMessage) {
         }, 2500);
     }   
 }
-
